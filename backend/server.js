@@ -24,7 +24,8 @@ app.use("/api/receipts", receiptRoutes);
 
 app.use((req, res) => res.status(404).json({ error: "Not found" }));
 
-const port = process.env.SERVER_PORT || 4000;
+// Change this line
+const port = process.env.PORT || process.env.SERVER_PORT || 4000;
 
 const startServer = () => {
   const server = app.listen(port, () => console.log(`🚀 Backend running at http://localhost:${port}`));
